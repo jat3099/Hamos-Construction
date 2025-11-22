@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamos Construction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@1.0.0"
+        }
+      }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-trailer"></div>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">Hamos <span class="logo-accent">Construction</span></a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#services" data-section="services">Services</a></li>
+                    <li><a href="#portfolio" data-section="portfolio">Portfolio</a></li>
+                    <li><a href="#about" data-section="about">About Us</a></li>
+                    <li><a href="#testimonials" data-section="testimonials">Testimonials</a></li>
+                    <li><a href="#faq" data-section="faq">FAQ</a></li>
+                    <li><a href="#contact" class="cta-button secondary">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-slideshow-background">
+                <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern Kitchen Remodel">
+                <img src="https://images.pexels.com/photos/3288102/pexels-photo-3288102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Luxury Bathroom Renovation">
+                <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cozy Living Room Update">
+                <img src="https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Full Home Exterior Renovation">
+                <img src="https://i.imgur.com/oELd2uE.png" alt="Front Of the House">
+            </div>
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <h1>Remodels that redefine your home</h1>
+                    <p>Upgrade kitchens, baths, and living spaces with expert craftsmanship. Discover seamless renovations designed for comfort and style.</p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="cta-button">Gallery</a>
+                        <a href="#contact" class="cta-button secondary">Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services" class="content-section">
+            <div class="container animate-on-scroll">
+                <h2>Transform your home, effortlessly</h2>
+                <p class="section-subtitle">Explore our expert remodeling services for kitchens, bathrooms, living spaces, and full-home renovations.</p>
+                <div class="service-grid">
+                    <div class="service-card whole-home">
+                        <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Whole Home Icon</title><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        <h3>Whole-home remodeling</h3>
+                        <p>Upgrade every room with cohesive design and reliable craftsmanship for a seamless transformation.</p>
+                    </div>
+                    <div class="service-card kitchen">
+                        <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Kitchen Icon</title><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <h3>Kitchen remodeling</h3>
+                        <p>Custom layouts, modern finishes, and functional upgrades tailored to your cooking and entertaining needs.</p>
+                    </div>
+                    <div class="service-card bathroom">
+                       <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Bathroom Icon</title><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <h3>Bathroom remodeling</h3>
+                        <p>Refresh your bathroom with quality fixtures, smart layouts, and durable, stylish materials.</p>
+                    </div>
+                     <div class="service-card living-room">
+                        <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Living Room Icon</title><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <h3>Living room updates</h3>
+                        <p>Open up your living space with improved lighting, modern features, and thoughtful design details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="content-section">
+            <div class="container">
+                <h2 class="glowing-title">Before & After Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="comparison-slider animate-on-scroll" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Modern Kitchen Renovation Comparison">
+                        <img class="image-before" src="https://i.imgur.com/aetUaqM.jpeg" alt="Kitchen Before">
+                        <div class="image-after-wrapper">
+                            <img class="image-after" src="https://i.imgur.com/HTrgpxt.jpeg" alt="Kitchen After">
+                        </div>
+                        <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Drag Handle</title><line x1="17" y1="12" x2="7" y2="12"></line><polyline points="10,15 7,12 10,9"></polyline><polyline points="14,15 17,12 14,9"></polyline></svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                        <div class="gallery-overlay"><h3>Modern Bathroom</h3></div>
+                    </div>
+
+                    <div class="comparison-slider animate-on-scroll" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Stylish Living Room Renovation Comparison">
+                        <img class="image-before" src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Living Room Before">
+                         <div class="image-after-wrapper">
+                            <img class="image-after" src="https://images.pexels.com/photos/3797991/pexels-photo-3797991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Living Room After">
+                        </div>
+                         <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Drag Handle</title><line x1="17" y1="12" x2="7" y2="12"></line><polyline points="10,15 7,12 10,9"></polyline><polyline points="14,15 17,12 14,9"></polyline></svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                        <div class="gallery-overlay"><h3>Stylish Living Room</h3></div>
+                    </div>
+
+                    <div class="comparison-slider animate-on-scroll" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Cozy Living Room Renovation Comparison">
+                        <img class="image-before" src="https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Living Room Before">
+                         <div class="image-after-wrapper">
+                            <img class="image-after" src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Living Room After">
+                        </div>
+                         <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Drag Handle</title><line x1="17" y1="12" x2="7" y2="12"></line><polyline points="10,15 7,12 10,9"></polyline><polyline points="14,15 17,12 14,9"></polyline></svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                        <div class="gallery-overlay"><h3>Cozy Living Room</h3></div>
+                    </div>
+
+                    <div class="comparison-slider animate-on-scroll" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Full Home Exterior Renovation Comparison">
+                       <img class="image-before" src="https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="House Before">
+                        <div class="image-after-wrapper">
+                           <img class="image-after" src="https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="House After">
+                       </div>
+                        <div class="slider-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Drag Handle</title><line x1="17" y1="12" x2="7" y2="12"></line><polyline points="10,15 7,12 10,9"></polyline><polyline points="14,15 17,12 14,9"></polyline></svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                       <div class="gallery-overlay"><h3>Full Renovation</h3></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <div class="container">
+                <div class="about-grid animate-on-scroll">
+                    <div class="about-text">
+                        <h2 class="glowing-title">About Hamos Construction</h2>
+                        <p>For over 15 years, Hamos Construction has been the premier home renovation specialist in the region. Our philosophy is simple: listen to our clients, understand their vision, and bring that vision to life with unparalleled craftsmanship.</p>
+                        <p>We are a family-owned business dedicated to building lasting relationships through trust, quality, and beautiful results.</p>
+                    </div>
+                    <div class="about-image-container">
+                        <img src="https://i.imgur.com/6WaThp7.png" alt="Craftsman working on a detailed wood project" class="about-image">
+                    </div>
+                </div>
+
+                <div class="team-section animate-on-scroll">
+                    <h3 class="team-title">Meet Our Leadership</h3>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <img src="https://i.imgur.com/BmRF0e1.jpeg" alt="Alex Hamos, Founder">
+                            <h4>Luis Carrillo</h4>
+                            <p>Founder & CEO</p>
+                        </div>
+                        <div class="team-card">
+                            <img src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Jordan Riley, Lead Designer">
+                            <h4>Jordan Riley</h4>
+                            <p>Lead Designer</p>
+                        </div>
+                        <div class="team-card">
+                            <img src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sam Taylor, Project Manager">
+                            <h4>Sam Taylor</h4>
+                            <p>Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="content-section">
+            <div class="container">
+                <div class="testimonials-grid">
+                    <div class="testimonials-header animate-on-scroll">
+                        <h2>Clients trust our craftsmanship</h2>
+                        <p>Hear from homeowners who chose us for their remodeling projects. Real stories, real results—across kitchens, bathrooms, and full-home renovations.</p>
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <span class="stat-number">52K+</span>
+                                <span class="stat-label">Projects delivered</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">2M+</span>
+                                <span class="stat-label">Sq. ft. transformed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-cards-column">
+                        <div class="testimonial-card animate-on-scroll">
+                            <div class="testimonial-author">
+                                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Riley Morgan">
+                                <div>
+                                    <cite>Riley Morgan</cite>
+                                    <span>Homeowner, Kitchen Remodel</span>
+                                </div>
+                            </div>
+                            <blockquote>Professional, efficient, and attentive to every detail. Our kitchen upgrade was seamless and exceeded expectations.</blockquote>
+                        </div>
+                         <div class="testimonial-card animate-on-scroll">
+                            <div class="testimonial-author">
+                                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Casey Bennett">
+                                <div>
+                                    <cite>Casey Bennett</cite>
+                                    <span>Condo Owner, Bathroom Update</span>
+                                </div>
+                            </div>
+                            <blockquote>Clear communication and quality work throughout. The bathroom looks fantastic and the process was stress-free.</blockquote>
+                        </div>
+                        <div class="testimonial-card animate-on-scroll">
+                            <div class="testimonial-author">
+                                <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Drew Ellis">
+                                <div>
+                                    <cite>Drew Ellis</cite>
+                                    <span>Property Manager, Full Renovation</span>
+                                </div>
+                            </div>
+                            <blockquote>Every phase was managed with care. The renovation added value and refreshed the entire property.</blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="content-section">
+            <div class="container animate-on-scroll">
+                <p class="section-label">FAQ</p>
+                <h2>Answers for your renovation questions</h2>
+                <p class="section-subtitle">Get straightforward information about our remodeling services, process, and what to expect when working with our team.</p>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer">
+                            <h3>What remodeling services do you provide?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand FAQ</title><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq1-answer" class="faq-answer">
+                            <p>We handle kitchen, bathroom, living room, and full-home renovations. Our team manages each phase, from planning to completion, with a focus on quality and clear communication.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer">
+                            <h3>How long does a remodel take?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand FAQ</title><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq2-answer" class="faq-answer">
+                            <p>Timelines depend on project size. Most kitchen or bathroom remodels take 3–6 weeks. Full-home renovations may take longer. We share a detailed schedule before starting.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer">
+                            <h3>Are estimates and consultations free?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand FAQ</title><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq3-answer" class="faq-answer">
+                            <p>Yes, we offer free consultations and estimates. We’ll review your needs, assess your space, and provide a clear proposal with costs and timelines.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq4-answer">
+                            <h3>Do I need to move out during work?</h3>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Expand FAQ</title><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div id="faq4-answer" class="faq-answer">
+                            <p>You can usually stay at home during renovations. For larger projects, we’ll discuss logistics and help you plan for any necessary accommodations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="container container-wide">
+                 <div class="contact-grid">
+                    <div class="contact-text animate-on-scroll">
+                        <p class="section-label">CONTACT</p>
+                        <h2 class="glowing-title">Let's talk about your project</h2>
+                        <p>Get in touch for a free quote.</p>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Email Icon</title><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Email</h3>
+                                <a href="mailto:info@hamoconstruction.com">Luis@hamoconstruction.com</a>
+                                <a href="mailto:info@hamoconstruction.com">Isabella@hamoconstruction.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Phone Icon</title><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Phone</h3>
+                                <a href="tel:+15551234567">+1 (443) 579-6245</a>
+                            </div>
+                        </div>
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Address Icon</title><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Address</h3>
+                                <p>101 Web Lane, Bell Air, MD</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Hamos Construction. All Rights Reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Instagram</title><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
