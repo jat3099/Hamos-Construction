@@ -1,20 +1,29 @@
-# Use a lightweight Nginx base image
+# --- STAGE 1: Build the frontend assets using the Node.js image ---
+FROM node:20-alpine as builder
+WORKDIR /app
+
+# Install dependencies (only copy package files to optimize caching)
+COPY package.json package-lock.json ./
+RUN npm install --production=false
+
+# Copy source code and run the build script
+# NOTE: 'npm run build' must output the final static files to a folder (e.g., 'dist')
+COPY . .
+RUN npm run build 
+
+# --- STAGE 2: Final Nginx image to serve the compiled assets ---
 FROM nginx:alpine
 
-# Remove the default Nginx configuration
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copy your custom nginx.conf into the Nginx configuration directory
+# CRITICAL FIX A: Ensure Nginx uses the correct port config
+# Your custom config must listen on 0.0.0.0:8080 (as corrected previously)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy your entire project directory into the Nginx web root.
-# The `.` refers to the current directory where the Dockerfile is located.
-# `/usr/share/nginx/html` is the default directory where Nginx serves static files from.
-COPY . /usr/share/nginx/html
+# CRITICAL FIX B: Copy ONLY the final compiled assets from the builder stage
+# Verify 'dist' matches your 'npm run build' output folder!
+# Verify '/usr/share/nginx/html' matches the 'root' in your nginx.conf!
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Expose port 8080. This tells Docker and Cloud Run that the container
-# expects traffic on this port.
+# Inform Cloud Run that the container listens on 8080
 EXPOSE 8080
 
-# Nginx starts automatically when the container runs due to its base image's entrypoint.
-# No explicit CMD instruction is needed here.
+# Nginx starts automatically (default CMD)
