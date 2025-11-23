@@ -1,20 +1,34 @@
-# Use a lightweight Nginx base image to serve your static files.
+# ------------------------------------------------------------------
+# --- STAGE 1: BUILDER (Compiles the application) ---
+# ------------------------------------------------------------------
+# 1. Use a Node.js image to run your build tools (npm)
+FROM node:20-alpine as builder
+WORKDIR /app
+
+# 2. Install dependencies (Node.js/Vite)
+COPY package.json package-lock.json ./
+RUN npm install
+
+# 3. Run the build command (This creates the compiled files in /app/dist)
+COPY . .
+RUN npm run build 
+
+# ------------------------------------------------------------------
+# --- STAGE 2: FINAL (Serves the compiled output with Nginx) ---
+# ------------------------------------------------------------------
+# 4. Use the lightweight Nginx image for the final deployment
 FROM nginx:alpine
 
-# Remove the default Nginx configuration.
-# This is necessary so we can replace it with our custom configuration.
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copy your custom nginx.conf into the Nginx configuration directory.
-# This file must exist in your project's root and configure Nginx to listen on 8080.
+# 5. CRITICAL FIX A: Copy your custom Nginx configuration file
+# This sets the server to listen on port 8080 (the health check port).
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy all your application files (index.html, index.css, index.tsx, etc.)
-# into the Nginx web root directory.
-COPY . /usr/share/nginx/html
+# 6. CRITICAL FIX B: Copy ONLY the compiled files from the 'builder' stage.
+# We confirmed your Vite project uses the default output folder 'dist'.
+# This makes sure Nginx has the final, ready-to-serve files.
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Inform Docker and Google Cloud Run that this container exposes port 8080.
+# 7. Inform Cloud Run that the container listens on 8080
 EXPOSE 8080
 
-# Nginx runs automatically when the container starts because of its base image's entrypoint.
-# No additional CMD instruction is needed.
+# Nginx starts automatically
