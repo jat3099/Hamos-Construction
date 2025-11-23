@@ -1,31 +1,20 @@
-# ----------------------------------------------------
-# --- STAGE 1: The BUILDER Stage (Compiles the Code) ---
-# ----------------------------------------------------
-FROM node:20-alpine as builder
-WORKDIR /app
-
-# 1. Install dependencies
-COPY package.json package-lock.json ./
-RUN npm install
-
-# 2. Run the build command
-# This creates the final, ready-to-serve files in an output folder (like /app/dist)
-COPY . .
-RUN npm run build 
-
-# ----------------------------------------------------
-# --- STAGE 2: The FINAL Stage (Serves with Nginx) ---
-# ----------------------------------------------------
+# Use a lightweight Nginx base image to serve your static files.
 FROM nginx:alpine
 
-# CRITICAL A: Copy your custom Nginx configuration file
-# This is where your 'listen 0.0.0.0:8080' fix should be applied.
+# Remove the default Nginx configuration.
+# This is necessary so we can replace it with our custom configuration.
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copy your custom nginx.conf into the Nginx configuration directory.
+# This file must exist in your project's root and configure Nginx to listen on 8080.
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# CRITICAL B: Copy ONLY the compiled assets from the 'builder' stage
-# The source path must be the exact output folder of 'npm run build' (e.g., /app/dist)
-# The destination must match the 'root' directive in your nginx.conf.
-COPY --from=builder /app/dist /usr/share/nginx/html
+# Copy all your application files (index.html, index.css, index.tsx, etc.)
+# into the Nginx web root directory.
+COPY . /usr/share/nginx/html
 
-# Inform Cloud Run that the container listens on 8080
+# Inform Docker and Google Cloud Run that this container exposes port 8080.
 EXPOSE 8080
+
+# Nginx runs automatically when the container starts because of its base image's entrypoint.
+# No additional CMD instruction is needed.
